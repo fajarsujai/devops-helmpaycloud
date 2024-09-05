@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  # name: {{ include "chartapigw.fullname" . }}
-  name: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+  name: {{ include "chartapigw.fullname" . }}
+  # name: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
   labels:
     {{- include "chartapigw.labels" . | nindent 4 }}
 spec:
