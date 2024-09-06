@@ -11,4 +11,15 @@ entries:
     urls:
     - chartapigw-0.1.0.tgz
     version: 0.1.0
+  chartdotnetv2:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-09-06T14:17:11.358139718+07:00"
+    description: A Helm chart for Kubernetes
+    digest: 2c18fe63e219d342b18f0e898b5b10ebb786f4e0747eb924a9d2721a0c7898dd
+    name: chartdotnetv2
+    type: application
+    urls:
+    - chartdotnetv2-0.1.0.tgz
+    version: 0.1.0
 generated: "2024-09-03T05:11:23.012010973+07:00"
