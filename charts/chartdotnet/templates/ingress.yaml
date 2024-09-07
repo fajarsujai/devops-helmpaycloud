@@ -18,6 +18,10 @@ metadata:
   name: {{ $fullName }}
   labels:
     {{- include "chartdotnet.labels" . | nindent 4 }}
+    app: {{ .Values.appLabels.app }}
+    project: {{ .Values.appLabels.project }}
+    role: {{ .Values.appLabels.type }}
+    env: {{ .Values.appLabels.env }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}

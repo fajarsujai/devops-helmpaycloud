@@ -1,16 +1,35 @@
-# Default values for chartapigw.
+# Default values for chartgo.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
+replicaCount: 2
 
 image:
-  repository: paycloud/paycloud-apigateway
+  repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: ""
 
-imagePullSecrets: []
+imagePullSecrets:
+  - name: regcred
+
+appLabels:
+    app: nginx
+    project: paycloud
+    role: front
+    env: develop
+
+service:
+  type: ClusterIP
+  port: 80
+
+nodeSelector:
+  nodetype: front
+
+
+
+
+
 nameOverride: ""
 fullnameOverride: ""
 
@@ -39,9 +58,6 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-service:
-  type: NodePort
-  port: 8000
 
 ingress:
   enabled: false
@@ -73,7 +89,11 @@ resources: {}
 
 livenessProbe:
   httpGet:
-    path: /health
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
     port: http
 
 autoscaling:
@@ -92,11 +112,9 @@ volumes: []
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts: []
-# - name: foosudo dnf check-update
+# - name: foo
 #   mountPath: "/etc/foo"
 #   readOnly: true
-
-nodeSelector: {}
 
 tolerations: []
 

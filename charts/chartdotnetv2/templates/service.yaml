@@ -4,6 +4,10 @@ metadata:
   name: {{ include "chartdotnetv2.fullname" . }}
   labels:
     {{- include "chartdotnetv2.labels" . | nindent 4 }}
+    app: {{ .Values.appLabels.app }}
+    project: {{ .Values.appLabels.project }}
+    role: {{ .Values.appLabels.type }}
+    env: {{ .Values.appLabels.env }}
 spec:
   type: {{ .Values.service.type }}
   ports:
