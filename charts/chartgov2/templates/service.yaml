@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.appLabels.app }}
+  labels:
+    {{- include "chartgov2.labels" . | nindent 4 }}
+    app: {{ .Values.appLabels.app }}
+    project: {{ .Values.appLabels.project }}
+    role: {{ .Values.appLabels.type }}
+    env: {{ .Values.appLabels.env }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+
+  {{- if .Values.grpcService.enabled }}
+    - port: {{ .Values.grpcService.port }}
+      targetPort: {{ .Values.grpcService.port }}
+      protocol: TCP
+      name: {{ .Values.grpcService.type }}
+  {{- end }}
+
+  selector:
+    {{- include "chartgov2.selectorLabels" . | nindent 4 }}

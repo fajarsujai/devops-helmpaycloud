@@ -21,35 +21,35 @@ appLabels:
 
 service:
   type: ClusterIP
-  port: 80
+  port: 9001
+
+grpcService:
+  enabled: true
+  type: grpc
+  port: 50051
 
 nodeSelector:
   nodetype: front
 
 
-# Additional volumeMounts on the output Deployment definition.
-volumeMounts:
-- name: nginx-secret-volume
-  mountPath: "/etc/secret/nginx"
-  readOnly: true
-# - name: foo
-#   mountPath: "/etc/foo"
-#   readOnly: true
-
-
-
 # Additional volumes on the output Deployment definition.
 volumes:
 - name: nginx-secret-volume
-  secret:
-    secretName: nginx
+  mountPath: "/etc/secret/nginx"
+  readOnly: true
 # - name: foo
 #   secret:
 #     secretName: mysecret
 #     optional: false
 
-
-
+# Additional volumeMounts on the output Deployment definition.
+volumeMounts:
+- name: nginx-secret-volume
+  secret:
+    secretName: nginx
+# - name: foo
+#   mountPath: "/etc/foo"
+#   readOnly: true
 
 
 
@@ -125,6 +125,7 @@ autoscaling:
   maxReplicas: 100
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
+
 
 tolerations: []
 
