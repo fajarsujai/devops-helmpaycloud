@@ -42,6 +42,9 @@ volumes:
 #     secretName: mysecret
 #     optional: false
 
+
+secretRef: nginx
+
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
 - name: nginx-secret-volume
@@ -110,14 +113,14 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
+# livenessProbe:
+#   httpGet:
+#     path: /
+#     port: http
+# readinessProbe:
+#   httpGet:
+#     path: /
+#     port: http
 
 autoscaling:
   enabled: false
