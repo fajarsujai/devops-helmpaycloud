@@ -12,7 +12,7 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-  {{ if eq .Values.servicetype "NodePort" }}
+  {{ if eq .Values.service.type "NodePort" }}
       nodePort: {{ .Values.port }}
   {{ end }}  
       targetPort: {{ .Values.service.port }}
