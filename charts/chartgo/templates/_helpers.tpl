@@ -47,6 +47,7 @@ Selector labels
 */}}
 {{- define "chartgo.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "chartgo.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
