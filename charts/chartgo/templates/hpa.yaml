@@ -7,7 +7,7 @@ metadata:
     {{- include "chartgo.labels" . | nindent 4 }}
     app: {{ .Values.appLabels.app }}
     project: {{ .Values.appLabels.project }}
-    role: {{ .Values.appLabels.type }}
+    role: {{ .Values.appLabels.role }}
     env: {{ .Values.appLabels.env }}
 spec:
   scaleTargetRef:
