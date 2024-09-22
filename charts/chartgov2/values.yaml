@@ -32,29 +32,28 @@ nodeSelector:
   nodetype: front
 
 
-# Additional volumes on the output Deployment definition.
-volumes: []
-# - name: nginx-secret-volume
-#   mountPath: "/etc/secret/nginx"
-  # readOnly: true
-# - name: foo
-#   secret:
-#     secretName: mysecret
-#     optional: false
-
-
-# secretRef: nginx
-
 # Additional volumeMounts on the output Deployment definition.
-volumeMounts: []
-# - name: nginx-secret-volume
-#   secret:
-#     secretName: nginx
+volumeMounts:
+- name: nginx-secret-volume
+  mountPath: "/.env"
+  readOnly: true
+  subPath: .env
 # - name: foo
 #   mountPath: "/etc/foo"
 #   readOnly: true
 
 
+# Additional volumes on the output Deployment definition.
+volumes:
+- name: nginx-secret-volume
+  secret:
+    secretName: nginx
+# - name: foo
+#   secret:
+#     secretName: mysecret
+#     optional: false
+
+# secretRef: nginx
 
 nameOverride: ""
 fullnameOverride: ""
