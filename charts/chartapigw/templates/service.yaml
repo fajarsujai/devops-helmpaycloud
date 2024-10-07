@@ -20,7 +20,7 @@ spec:
       name: http
 
   {{- if .Values.prometheusService.enabled }}
-    - port: {{ .Values.prometheusService.nodePort }}
+    - port: {{ .Values.prometheusService.port }}
   {{ if eq .Values.service.type "NodePort" }}
       nodePort: {{ .Values.service.nodePort }}
   {{ end }}  

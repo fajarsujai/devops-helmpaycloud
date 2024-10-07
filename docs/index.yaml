@@ -3,9 +3,9 @@ entries:
   chartapigw:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-10-07T18:37:27.828123+07:00"
+    created: "2024-10-07T18:48:33.398002+07:00"
     description: A Helm chart for Kubernetes
-    digest: 67810105177a104a857918dbf870e71522416d023edb5c437c151e9a092f822e
+    digest: ca14c94ffbf4e792aebbe23df16b1e0aeb02e3f8b0fc0ba79150b7c779a85fcf
     name: chartapigw
     type: application
     urls:
