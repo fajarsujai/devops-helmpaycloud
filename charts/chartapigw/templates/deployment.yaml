@@ -45,6 +45,11 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+        {{- if .Values.prometheusService.enabled }}
+            - name: {{ .Values.prometheusService.type }}
+              containerPort: {{ .Values.prometheusService.port }}
+              protocol: TCP
+        {{- end }}
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           resources:

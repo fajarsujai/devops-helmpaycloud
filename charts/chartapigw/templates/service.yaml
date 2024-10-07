@@ -18,5 +18,15 @@ spec:
       targetPort: {{ .Values.service.port }}
       protocol: TCP
       name: http
+
+  {{- if .Values.prometheusService.enabled }}
+    - port: {{ .Values.prometheusService.nodePort }}
+  {{ if eq .Values.service.type "NodePort" }}
+      nodePort: {{ .Values.service.nodePort }}
+  {{ end }}  
+      targetPort: {{ .Values.prometheusService.port }}
+      protocol: TCP
+      name: {{ .Values.prometheusService.type }}
+  {{- end }}
   selector:
     {{- include "chartapigw.selectorLabels" . | nindent 4 }}

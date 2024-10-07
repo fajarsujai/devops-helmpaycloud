@@ -23,6 +23,12 @@ service:
   type: NodePort
   port: 80
 
+prometheusService:
+  enabled: true
+  type: NodePort
+  port: 9092
+  nodePort: 8012
+
 nodeSelector:
   nodetype: front
 
