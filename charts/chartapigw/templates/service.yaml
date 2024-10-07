@@ -26,7 +26,7 @@ spec:
   {{ end }}  
       targetPort: {{ .Values.prometheusService.port }}
       protocol: TCP
-      name: {{ .Values.prometheusService.type }}
+      name: {{ .Values.prometheusService.name }}
   {{- end }}
   selector:
     {{- include "chartapigw.selectorLabels" . | nindent 4 }}

@@ -46,7 +46,7 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
         {{- if .Values.prometheusService.enabled }}
-            - name: {{ .Values.prometheusService.type }}
+            - name: {{ .Values.prometheusService.name }}
               containerPort: {{ .Values.prometheusService.port }}
               protocol: TCP
         {{- end }}
