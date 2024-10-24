@@ -36,9 +36,9 @@ entries:
   chartgo:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-10-24T15:46:48.902741+07:00"
+    created: "2024-10-24T15:53:06.559149+07:00"
     description: A Helm chart for Kubernetes
-    digest: b2690fc63ef29e382f122723bc272d5222d5aabfc20f4d91f15a8317023c5d57
+    digest: f9394e95d41aff270c18764e8e3bc674e3f277bec404d07e2cdd20b36d988df8
     name: chartgo
     type: application
     urls:
