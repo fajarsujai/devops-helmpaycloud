@@ -24,6 +24,11 @@ spec:
   {{ if eq .Values.prometheusService.type "NodePort" }}
       nodePort: {{ .Values.prometheusService.nodePort }}
   {{ end }}  
+  {{- if .Values.jaegerService.enabled }}
+    - port: {{ .Values.jaegerService.port }}
+  {{ if eq .Values.jaegerService.type "NodePort" }}
+      nodePort: {{ .Values.jaegerService.nodePort }}
+  {{ end }}  
       targetPort: {{ .Values.prometheusService.port }}
       protocol: TCP
       name: {{ .Values.prometheusService.name }}

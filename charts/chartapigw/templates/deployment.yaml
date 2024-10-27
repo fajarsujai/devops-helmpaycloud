@@ -50,6 +50,11 @@ spec:
               containerPort: {{ .Values.prometheusService.port }}
               protocol: TCP
         {{- end }}
+        {{- if .Values.jaegerService.enabled }}
+            - name: {{ .Values.jaegerService.name }}
+              containerPort: {{ .Values.jaegerService.port }}
+              protocol: TCP
+        {{- end }}
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           resources:
