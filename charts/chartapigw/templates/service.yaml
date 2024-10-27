@@ -24,14 +24,19 @@ spec:
   {{ if eq .Values.prometheusService.type "NodePort" }}
       nodePort: {{ .Values.prometheusService.nodePort }}
   {{ end }}  
+      targetPort: {{ .Values.prometheusService.port }}
+      protocol: TCP
+      name: {{ .Values.prometheusService.name }}
+  {{- end }}
+
   {{- if .Values.jaegerService.enabled }}
     - port: {{ .Values.jaegerService.port }}
   {{ if eq .Values.jaegerService.type "NodePort" }}
       nodePort: {{ .Values.jaegerService.nodePort }}
   {{ end }}  
-      targetPort: {{ .Values.prometheusService.port }}
+      targetPort: {{ .Values.jaegerService.port }}
       protocol: TCP
-      name: {{ .Values.prometheusService.name }}
+      name: {{ .Values.jaegerService.name }}
   {{- end }}
   selector:
     {{- include "chartapigw.selectorLabels" . | nindent 4 }}
