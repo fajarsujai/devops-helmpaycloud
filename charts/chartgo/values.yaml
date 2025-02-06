@@ -54,7 +54,7 @@ volumes:
 # Additional volumes on the output Deployment definition.
 topologySpreadConstraints:
 - maxSkew: 1
-  topologyKey: nodetype
+  topologyKey: "kubernetes.io/hostname"
   whenUnsatisfiable: DoNotSchedule
   labelSelector:
     matchLabels: 

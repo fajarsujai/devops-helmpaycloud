@@ -36,9 +36,9 @@ entries:
   chartgo:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-02-06T14:19:24.101731+07:00"
+    created: "2025-02-06T14:50:31.890821+07:00"
     description: A Helm chart for Kubernetes
-    digest: 74e2c7e952015999489758899d841d485f776488787db38e487b20bc3b77ea67
+    digest: c7176effc5eb1b743b10f4fdd4dd7a98f0aec98b33302c20213cb318cd3ac1de
     name: chartgo
     type: application
     urls:
@@ -47,9 +47,9 @@ entries:
   chartgov2:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-02-06T14:20:10.422387+07:00"
+    created: "2025-02-06T14:52:30.824908+07:00"
     description: A Helm chart for Kubernetes
-    digest: 957f7e9f556290d2c560ac9860b5380db71458cfa57b56548eabaf238976e24f
+    digest: 44fd4bccdfccedd4349eee2a9eabbe947332aaa052385fbea8f76a269403bff2
     name: chartgov2
     type: application
     urls:
