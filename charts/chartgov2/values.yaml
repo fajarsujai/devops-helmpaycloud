@@ -53,6 +53,14 @@ volumes:
 #     secretName: mysecret
 #     optional: false
 
+topologySpreadConstraints:
+- maxSkew: 1
+  topologyKey: nodetype
+  whenUnsatisfiable: DoNotSchedule
+  labelSelector:
+    matchLabels: 
+      app: back
+
 # secretRef: nginx
 
 nameOverride: ""
@@ -70,7 +78,8 @@ serviceAccount:
   name: ""
 
 podAnnotations: {}
-podLabels: {}
+podLabels:
+  app: back
 
 podSecurityContext: {}
   # fsGroup: 2000

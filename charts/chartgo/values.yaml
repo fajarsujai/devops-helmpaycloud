@@ -51,6 +51,21 @@ volumes:
 # secretRef: nginx
 
 
+# Additional volumes on the output Deployment definition.
+topologySpreadConstraints:
+- maxSkew: 1
+  topologyKey: nodetype
+  whenUnsatisfiable: DoNotSchedule
+  labelSelector:
+    matchLabels: 
+      app: back
+# - maxSkew: 1
+#   topologyKey: nodetype
+#   whenUnsatisfiable: DoNotSchedule
+#   labelSelector:
+#     matchLabels: 
+#       app: backend
+
 
 
 
@@ -69,7 +84,8 @@ serviceAccount:
   name: ""
 
 podAnnotations: {}
-podLabels: {}
+podLabels:
+  app: back
 
 podSecurityContext: {}
   # fsGroup: 2000
