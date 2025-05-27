@@ -87,6 +87,7 @@ podAnnotations:
   reloader.stakater.com/auto: "true"
 podLabels:
   app: back
+  appName: nginx
 
 podSecurityContext: {}
   # fsGroup: 2000
