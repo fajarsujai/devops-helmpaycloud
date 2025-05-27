@@ -59,7 +59,7 @@ topologySpreadConstraints:
   whenUnsatisfiable: DoNotSchedule
   labelSelector:
     matchLabels: 
-      app: back
+      appName: nginx
 
 # secretRef: nginx
 

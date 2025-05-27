@@ -58,7 +58,7 @@ topologySpreadConstraints:
   whenUnsatisfiable: DoNotSchedule
   labelSelector:
     matchLabels: 
-      app: back
+      appName: nginx
 # - maxSkew: 1
 #   topologyKey: nodetype
 #   whenUnsatisfiable: DoNotSchedule
