@@ -11,34 +11,12 @@ entries:
     urls:
     - chartapigw-0.1.0.tgz
     version: 0.1.0
-  chartdotnetv2:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-09-07T19:07:19.824488587+07:00"
-    description: A Helm chart for Kubernetes
-    digest: 620a6f544eb4f6b2b94b24af39f99d599fba253cd206016e363a70e8083b855b
-    name: chartdotnetv2
-    type: application
-    urls:
-    - chartdotnetv2-0.1.0.tgz
-    version: 0.1.0
-  chartdotnet:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2024-09-07T19:06:43.976950423+07:00"
-    description: A Helm chart for Kubernetes
-    digest: 731b0949abb00c5622d8cd7b3c36ce5a456e9244bf1cae63b5f8358d48357c62
-    name: chartdotnet
-    type: application
-    urls:
-    - chartdotnet-0.1.0.tgz
-    version: 0.1.0
   chartgo:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-02-06T14:50:31.890821+07:00"
+    created: "2025-05-27T12:03:18.539843+07:00"
     description: A Helm chart for Kubernetes
-    digest: c7176effc5eb1b743b10f4fdd4dd7a98f0aec98b33302c20213cb318cd3ac1de
+    digest: 7e4ed8a5ad0cb2c1920b1db807a64a7e57edef7a783e77a08aa23dd9ddd1a5c4
     name: chartgo
     type: application
     urls:
@@ -47,9 +25,9 @@ entries:
   chartgov2:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-02-06T14:52:30.824908+07:00"
+    created: "2025-05-27T12:04:49.354489+07:00"
     description: A Helm chart for Kubernetes
-    digest: 44fd4bccdfccedd4349eee2a9eabbe947332aaa052385fbea8f76a269403bff2
+    digest: 166b4735fb9aed23beba8f13f513860f3c8f5503ec2002df4633a8a378807e04
     name: chartgov2
     type: application
     urls:
