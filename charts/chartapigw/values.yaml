@@ -51,7 +51,9 @@ serviceAccount:
   name: ""
 
 podAnnotations: {}
-podLabels: {}
+podLabels:
+  app: front
+  appName: nginx
 
 podSecurityContext: {}
   # fsGroup: 2000
