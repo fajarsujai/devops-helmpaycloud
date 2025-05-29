@@ -95,12 +95,12 @@ resources: {}
 
 livenessProbe:
   httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
+    path: /health
+    port: 8000
+# readinessProbe:
+#   httpGet:
+#     path: /
+#     port: http
 
 autoscaling:
   enabled: false
