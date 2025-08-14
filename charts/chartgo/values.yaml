@@ -13,11 +13,6 @@ image:
 imagePullSecrets:
   - name: regcred
 
-appLabels:
-    app: nginx
-    project: paycloud
-    role: front
-    env: develop
 
 service:
   type: ClusterIP
@@ -86,7 +81,7 @@ serviceAccount:
 podAnnotations:
   reloader.stakater.com/auto: "true"
 podLabels:
-  app: back
+  nodetype: front
   appName: nginx
 
 podSecurityContext: {}
@@ -129,14 +124,15 @@ resources:
     cpu: 0m
     memory: 0Mi
 
-# livenessProbe:
-#   httpGet:
-#     path: /
-#     port: http
-# readinessProbe:
-#   httpGet:
-#     path: /
-#     port: http
+livenessEnabled: false
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+  initialDelaySeconds: 10
+  periodSeconds: 60
+  timeoutSeconds: 2
+  failureThreshold: 3
 
 autoscaling:
   enabled: false
@@ -148,3 +144,5 @@ autoscaling:
 tolerations: []
 
 affinity: {}
+
+appName: nginx
