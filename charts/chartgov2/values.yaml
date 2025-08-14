@@ -13,12 +13,6 @@ image:
 imagePullSecrets:
   - name: regcred
 
-appLabels:
-    app: nginx
-    project: paycloud
-    role: front
-    env: develop
-
 service:
   type: ClusterIP
   port: 9001
@@ -148,3 +142,5 @@ autoscaling:
 tolerations: []
 
 affinity: {}
+
+appName: nginx
