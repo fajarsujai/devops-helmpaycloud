@@ -13,15 +13,9 @@ image:
 imagePullSecrets:
   - name: regcred
 
-appLabels:
-    app: nginx
-    project: paycloud
-    role: front
-    env: develop
-
 service:
   type: NodePort
-  port: 80
+  port: 8000
 
 prometheusService:
   enabled: true
@@ -31,9 +25,6 @@ prometheusService:
 
 nodeSelector:
   nodetype: front
-
-
-
 
 
 nameOverride: ""
@@ -95,10 +86,15 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
+livenessEnabled: true
 livenessProbe:
   httpGet:
     path: /health
     port: 8000
+  initialDelaySeconds: 10
+  periodSeconds: 60
+  timeoutSeconds: 2
+  failureThreshold: 3
 # readinessProbe:
 #   httpGet:
 #     path: /
@@ -137,3 +133,5 @@ topologySpreadConstraints:
 tolerations: []
 
 affinity: {}
+
+app: nginx

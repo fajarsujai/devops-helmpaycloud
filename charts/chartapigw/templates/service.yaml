@@ -1,13 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.appLabels.app }}
+  name: {{ .Values.app }}
   labels:
     {{- include "chartapigw.labels" . | nindent 4 }}
-    app: {{ .Values.appLabels.app }}
-    project: {{ .Values.appLabels.project }}
-    role: {{ .Values.appLabels.type }}
-    env: {{ .Values.appLabels.env }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -29,14 +25,5 @@ spec:
       name: {{ .Values.prometheusService.name }}
   {{- end }}
 
-  {{- if .Values.jaegerService.enabled }}
-    - port: {{ .Values.jaegerService.port }}
-  {{ if eq .Values.jaegerService.type "NodePort" }}
-      nodePort: {{ .Values.jaegerService.nodePort }}
-  {{ end }}  
-      targetPort: {{ .Values.jaegerService.port }}
-      protocol: TCP
-      name: {{ .Values.jaegerService.name }}
-  {{- end }}
   selector:
     {{- include "chartapigw.selectorLabels" . | nindent 4 }}

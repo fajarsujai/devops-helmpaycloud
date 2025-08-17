@@ -5,10 +5,6 @@ metadata:
   # name: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
   labels:
     {{- include "chartapigw.labels" . | nindent 4 }}
-    app: {{ .Values.appLabels.app }}
-    project: {{ .Values.appLabels.project }}
-    role: {{ .Values.appLabels.type }}
-    env: {{ .Values.appLabels.env }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -54,13 +50,10 @@ spec:
               containerPort: {{ .Values.prometheusService.port }}
               protocol: TCP
         {{- end }}
-        {{- if .Values.jaegerService.enabled }}
-            - name: {{ .Values.jaegerService.name }}
-              containerPort: {{ .Values.jaegerService.port }}
-              protocol: TCP
-        {{- end }}
+        {{- if .Values.livenessEnabled }}
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
+        {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
