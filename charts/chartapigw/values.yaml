@@ -22,7 +22,8 @@ prometheusService:
   type: NodePort
   port: 9092
   nodePort: 8012
-
+  name: prometheus
+  
 nodeSelector:
   nodetype: front
 
