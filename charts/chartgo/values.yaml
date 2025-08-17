@@ -53,7 +53,7 @@ topologySpreadConstraints:
   whenUnsatisfiable: DoNotSchedule
   labelSelector:
     matchLabels: 
-      appName: nginx
+      app: nginx
 # - maxSkew: 1
 #   topologyKey: nodetype
 #   whenUnsatisfiable: DoNotSchedule
@@ -82,7 +82,7 @@ podAnnotations:
   reloader.stakater.com/auto: "true"
 podLabels:
   nodetype: front
-  appName: nginx
+  app: nginx
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -145,4 +145,4 @@ tolerations: []
 
 affinity: {}
 
-appName: nginx
+app: nginx

@@ -52,8 +52,8 @@ serviceAccount:
 
 podAnnotations: {}
 podLabels:
-  app: front
-  appName: nginx
+  nodetype: front
+  app: nginx
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -131,7 +131,7 @@ topologySpreadConstraints:
   whenUnsatisfiable: DoNotSchedule
   labelSelector:
     matchLabels: 
-      appName: nginx
+      app: nginx
 
 
 tolerations: []

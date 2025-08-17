@@ -48,7 +48,7 @@ Selector labels
 {{- define "chartgov2.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "chartgov2.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
-appName: {{ .Values.appName }}
+app: {{ .Values.app }}
 {{- end }}
 
 {{/*
