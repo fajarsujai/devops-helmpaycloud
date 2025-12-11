@@ -5,6 +5,7 @@ metadata:
   # name: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
   labels:
     {{- include "chartapigw.labels" . | nindent 4 }}
+    {{ .Values.app }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -12,6 +13,7 @@ spec:
   selector:
     matchLabels:
       {{- include "chartapigw.selectorLabels" . | nindent 6 }}
+      {{ .Values.app }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}

@@ -15,13 +15,13 @@ imagePullSecrets:
 
 service:
   type: NodePort
-  port: 8000
+  port: 30001
 
 prometheusService:
   enabled: true
   type: NodePort
-  port: 9092
-  nodePort: 8012
+  port: 30092
+  nodePort: 30012
   name: prometheus
   
 nodeSelector:
@@ -91,7 +91,7 @@ livenessEnabled: true
 livenessProbe:
   httpGet:
     path: /health
-    port: 8000
+    port: 30001
   initialDelaySeconds: 10
   periodSeconds: 60
   timeoutSeconds: 2

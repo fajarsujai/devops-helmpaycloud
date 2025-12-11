@@ -4,6 +4,7 @@ metadata:
   name: {{ include "chartgov2.fullname" . }}
   labels:
     {{- include "chartgov2.labels" . | nindent 4 }}
+    {{ .Values.app }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -11,6 +12,7 @@ spec:
   selector:
     matchLabels:
       {{- include "chartgov2.selectorLabels" . | nindent 6 }}
+      {{ .Values.app }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
