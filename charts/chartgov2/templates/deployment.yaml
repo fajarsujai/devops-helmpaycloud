@@ -12,7 +12,6 @@ spec:
   selector:
     matchLabels:
       {{- include "chartgov2.selectorLabels" . | nindent 6 }}
-      {{ .Values.app }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
