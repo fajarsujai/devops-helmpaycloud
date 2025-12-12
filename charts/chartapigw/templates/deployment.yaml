@@ -5,7 +5,7 @@ metadata:
   # name: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
   labels:
     {{- include "chartapigw.labels" . | nindent 4 }}
-    {{ .Values.app }}
+    app: {{ .Values.app }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
