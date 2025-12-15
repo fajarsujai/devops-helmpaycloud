@@ -22,7 +22,7 @@ spec:
   {{ end }}  
       targetPort: {{ .Values.prometheusService.port }}
       protocol: TCP
-      name: {{ .Values.prometheusService.name }}
+      name: prometheus
   {{- end }}
 
   selector:
