@@ -20,7 +20,7 @@ service:
 prometheusService:
   enabled: true
   type: NodePort
-  port: 30092
+  port: 9092
   nodePort: 30012
   name: prometheus
   

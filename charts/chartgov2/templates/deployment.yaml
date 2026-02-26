@@ -50,6 +50,10 @@ spec:
               containerPort: {{ .Values.grpcService.port }}
               protocol: TCP
         {{- end }}
+        {{- if .Values.readinessEnabled }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+        {{- end }}
         {{- if .Values.livenessEnabled }}
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
