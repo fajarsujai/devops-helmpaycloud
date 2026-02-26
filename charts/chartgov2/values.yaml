@@ -126,6 +126,15 @@ livenessProbe:
   periodSeconds: 60
   timeoutSeconds: 2
   failureThreshold: 3
+startupEnabled: false
+startupProbe:
+  httpGet:
+    path: /
+    port: http
+  initialDelaySeconds: 10
+  periodSeconds: 60
+  timeoutSeconds: 2
+  failureThreshold: 3
 readinessEnabled: false
 readinessProbe:
   httpGet:

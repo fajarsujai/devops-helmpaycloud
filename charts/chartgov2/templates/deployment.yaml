@@ -58,6 +58,10 @@ spec:
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
         {{- end }}
+        {{- if .Values.startupEnabled }}
+          startupProbe:
+            {{- toYaml .Values.startupProbe | nindent 12 }}
+        {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
