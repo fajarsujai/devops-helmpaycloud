@@ -24,6 +24,7 @@ grpcService:
 
 nodeSelector:
   nodetype: front
+  servicetype: pjp
 
 
 # Additional volumeMounts on the output Deployment definition.

@@ -26,6 +26,7 @@ prometheusService:
   
 nodeSelector:
   nodetype: front
+  servicetype: pjp
 
 
 nameOverride: ""
