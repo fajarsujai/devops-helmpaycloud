@@ -17,9 +17,7 @@ spec:
 
   {{- if .Values.prometheusService.enabled }}
     - port: {{ .Values.prometheusService.port }}
-  {{ if eq .Values.prometheusService.type "NodePort" }}
       nodePort: {{ .Values.prometheusService.nodePort }}
-  {{ end }}  
       targetPort: {{ .Values.prometheusService.port }}
       protocol: TCP
       name: prometheus
