@@ -21,7 +21,8 @@ grpcService:
   enabled: true
   type: grpc
   port: 50051
-
+  clusterIP: None
+  
 nodeSelector:
   nodetype: front
   servicetype: pjp

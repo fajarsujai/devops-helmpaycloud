@@ -1,0 +1,2 @@
+tolong pelajari helmchart nya, terdapat lalu pelajari values yang terdapat pada folder develop
+improve values yang terdapat pada develop dari sisi securitynya, jangan langsung di update cukup buatkan plan.md, yang nanti nya akan di implement oleh devops junuior atau model yang lebih rendah

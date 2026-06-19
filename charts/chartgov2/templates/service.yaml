@@ -11,13 +11,24 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+  selector:
+    {{- include "chartgov2.selectorLabels" . | nindent 4 }}
 
-  {{- if .Values.grpcService.enabled }}
+{{- if .Values.grpcService.enabled }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.app }}-headless
+  labels:
+    {{- include "chartgov2.labels" . | nindent 4 }}
+spec:
+  clusterIP: {{ .Values.grpcService.clusterIP }}
+  ports:
     - port: {{ .Values.grpcService.port }}
       targetPort: {{ .Values.grpcService.port }}
       protocol: TCP
-      name: {{ .Values.grpcService.type }}
-  {{- end }}
-
+      name: grpc
   selector:
     {{- include "chartgov2.selectorLabels" . | nindent 4 }}
+{{- end }}
