@@ -18,7 +18,7 @@ service:
   port: 30001
 
 prometheusService:
-  enabled: true
+  enabled: false
   type: NodePort
   port: 9092
   nodePort: 30012
