@@ -23,11 +23,12 @@ entries:
     - chartgo-0.1.0.tgz
     version: 0.1.0
   chartgov2:
+  chartgov2:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-07T12:32:11.478045+07:00"
+    created: "2026-06-22T17:02:49.815015+07:00"
     description: A Helm chart for Kubernetes
-    digest: 3f7fcdbcd98196296c7334964da4969cb0d310df05d2db33c9d6140023636895
+    digest: bdd55f073513a36d472c83d1ffff87953330244847e84e55fc90d1e2643f433a
     name: chartgov2
     type: application
     urls:
